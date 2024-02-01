@@ -1,46 +1,24 @@
-{
-  "platform": "Cardano-based Lending and Staking",
-  "description": "A DeFi ecosystem leveraging Cardano CNFTs for collateral-based loans and introducing a dual-token reward system.",
-  "tokens": {
-    "mainToken": {
-      "description": "Primary utility and governance token, earned by staking initial CNFTs.",
-      "useCases": "Staking rewards, governance voting, platform utility."
-    },
-    "treasuryBackedToken": {
-      "description": "Secondary token representing a share of the platform's treasury, earned by staking CNFTs minted from defaulted loans.",
-      "useCases": "Treasury share representation, staking rewards."
-    }
-  },
-  "loanMechanics": {
-    "currency": "ADA",
-    "collateralType": "CNFT",
-    "loanToValueRatio": "33.3%",
-    "interestRate": "1% per week",
-    "defaultAction": "Mint new CNFT for staking, backed by the collateralized CNFTs in case of a loan default."
-  },
-  "stakingRewards": {
-    "initialCNFTs": {
-      "rewardToken": "Main Token",
-      "pool": "Initial CNFT Staking Pool"
-    },
-    "defaultedCNFTs": {
-      "rewardToken": "Treasury-Backed Token",
-      "pool": "Defaulted CNFT Staking Pool"
-    }
-  },
-  "governance": {
-    "voting": "Token holder based",
-    "keyDecisions": ["Platform updates", "Interest rates", "Treasury usage"]
-  },
-  "marketDynamics": {
-    "valuationMethod": "Market offers and oracle services",
-    "collateralValuation": "Accurate and fair market value"
-  },
-  "technicalImplementation": {
-    "blockchain": "Cardano",
-    "security": ["Smart contract audits", "Regular testing"]
-  },
-  "notes": {
-    "developerNote": "The above JSON structure encapsulates the detailed ecosystem design, including two distinct token rewards mechanisms and a robust approach to handling CNFTs as collateral. Ensure the smart contracts reflect this complexity and the platform can adapt to market changes and valuation updates in real-time."
-  }
-}
+# Cardano-based Lending and Staking Platform
+
+This repository outlines the initial concept for a decentralized finance (DeFi) platform built on the Cardano blockchain. The platform is designed to leverage the power of Cardano Non-Fungible Tokens (CNFTs) to create a lending system with unique features.
+
+## Concept
+
+The platform enables users to obtain loans in ADA by collateralizing their CNFTs. A key feature of the platform is a dual-token system that integrates:
+
+- A main utility and governance token.
+- A treasury-backed token issued in the event of loan defaults, which is also stakable.
+
+Initial CNFTs used to kickstart the platform can be staked to earn the main token, while the CNFTs minted from defaulted collateral can earn a separate treasury-backed token.
+
+## Specifications
+
+- The loan amount is determined as 1/3 of the CNFT's best offer on established marketplaces.
+- An interest rate of 1% per week is charged.
+- If a loan defaults, a new CNFT is minted and can be staked to earn a treasury-backed token.
+
+The platform's mechanics aim to create a sustainable lending model while also contributing to the Cardano NFT ecosystem.
+
+## Note
+
+This repository is currently only for documenting the proposed idea. Detailed specifications and implementations will follow in subsequent updates.
